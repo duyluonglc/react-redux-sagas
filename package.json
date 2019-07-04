@@ -49,16 +49,20 @@
     "redux-saga": "^0.16.0",
     "reduxsauce": "^0.7.0",
     "seamless-immutable": "^7.1.2",
-    "simple-line-icons": "2.4.1"
+    "simple-line-icons": "2.4.1",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "dev": "webpack -d --progress --watch --profile --json > compilation-stats.json --env.dev",
     "start": "webpack-dev-server --progress --colors --inline --env.dev",
     "build": "webpack -p --progress --env.prod",
-    "clean": "rimraf ./build"
+    "clean": "rimraf ./build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 6.4.0",
     "npm": ">= 5.0.0"
-  }
+  },
+  "snyk": true
 }
